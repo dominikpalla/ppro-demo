@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+<h1>Todo List</h1>
+<a th:href="@{/todos/new}">➕ Add New Todo</a>
+<ul>
+    <li th:each="t : ${todos}">
+        <a th:href="@{/todos/{id}(id=${t.id})}" th:text="${t.title}">Todo</a>
+        (done: <span th:text="${t.done}">false</span>)
+    </li>
+</ul>
+</body>
+</html>
